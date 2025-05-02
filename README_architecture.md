@@ -47,6 +47,7 @@ This repository implements a simplified local lakehouse architecture to ingest, 
    ```
    raw_input/warehouse/year=YYYY/month=MM/day=DD/billing.csv
    ```
+   We do not have the input file in the repo due to the size, for the code to work properly, input file needs to added at this path locally. 
 
 2. **FastAPI**:
    - Validates the CSV schema
