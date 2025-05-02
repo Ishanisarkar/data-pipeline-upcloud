@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  dbt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dbt-duckdb
+    volumes:
+      - ./bootstrap.sql:/app/bootstrap.sql   
+      - ./dbt_duckdb:/app                       
+      - ./datawarehouse:/datawarehouse       # parquet data output
+      - ./duckdb:/app/duckdb                      # persistent dbt database
+      - ./dbt_duckdb/profiles.yml:/root/.dbt/profiles.yml  # dbt expects profile here
+    working_dir: /app

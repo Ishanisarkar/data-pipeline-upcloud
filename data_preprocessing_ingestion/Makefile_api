@@ -1,0 +1,19 @@
+.PHONY: build up down reload
+
+build:
+	docker build -t billing-api .
+
+up:
+	docker run --rm -it -p 8000:8000 \
+	  -v $(PWD)/raw_input:/raw_input \
+	  -v $(PWD)/datawarehouse:/datawarehouse \
+	  -e RAW_BUCKET=/raw_input/warehouse \
+	  -e TARGET_DATE=2025-04-23 \
+	  billing-api
+
+down:
+	docker stop billing-api || true
+
+reload:
+	docker-compose down -v
+	docker-compose up --build

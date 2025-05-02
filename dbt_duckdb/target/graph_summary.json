@@ -1,0 +1,1 @@
+{"_invocation_id": "a7b5b7d6-9aa5-406f-a04b-408292554c50", "linked": {"0": {"name": "model.dbt_lakehouse.daily_credit_usage", "type": "model"}, "1": {"name": "model.dbt_lakehouse.failed_vs_success_per_user", "type": "model"}}}

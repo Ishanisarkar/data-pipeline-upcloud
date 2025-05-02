@@ -1,0 +1,8 @@
+name: dbt_lakehouse
+version: 1.0
+profile: dbt_duckdb
+models:
+  dbt_duckdb:
+    +materialized: external
+    +file_format: parquet
+    +schema: aggregates

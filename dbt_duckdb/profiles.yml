@@ -1,0 +1,7 @@
+dbt_duckdb:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /app/duckdb/lakehouse.duckdb
+      threads: 1
